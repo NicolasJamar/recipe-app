@@ -1,10 +1,23 @@
 import { useGlobalContext } from "../context"
 
 const Meals = () => {
-  const context = useGlobalContext()
-  console.log(context);
+  const { meals } = useGlobalContext();  
   return(
-    <h1>Meals</h1>
+    <section className="section-center">
+      { meals.map( (singleMeal) => {
+          const {idMeal, strMeal: title, strMealThumb: image} = singleMeal;
+          return (
+            <article key={idMeal} className="single-meal">
+              <img src={image} alt={title} className="img"/>
+              <footer>
+                <h5>{title}</h5>
+                <button className="like-btn">Click me</button>
+              </footer>
+            </article>
+          )
+        })
+      }
+    </section>
   )
 }
 
