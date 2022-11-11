@@ -2,7 +2,7 @@
 
 #### Setup
 
-React + Typescript + Vite
+React + Vite
 
 #### Commands
 
